@@ -1,0 +1,31 @@
+﻿<Window x:Class="testDEM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testDEM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <Button Content="Добавить" Click="AddUser_Click"/>
+            <Button Content="Удалить" Click="RemoveUser_Click"/>
+            <Button Content="Редактировать" Click="EditUser_Click"/>
+        </StackPanel>
+
+        <ListView x:Name="userListView" ItemsSource="{Binding Users}" Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Имя пользователя" DisplayMemberBinding="{Binding Name}" Width="150"/>
+                    <GridViewColumn Header="Почта" DisplayMemberBinding="{Binding Email}" Width="150"/>
+                    <GridViewColumn Header="Товар" DisplayMemberBinding="{Binding Product}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
