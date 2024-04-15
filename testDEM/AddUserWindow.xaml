@@ -8,7 +8,7 @@
         Title="AddUserWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <TextBox x:Name="NameTextBox" />
+            <TextBox x:Name="NameTextBox"   />
             <TextBox x:Name="EmailTextBox" />
             <TextBox x:Name="ProductTextBox" />
             <Button Content="OK" Click="OkButton_Click" />

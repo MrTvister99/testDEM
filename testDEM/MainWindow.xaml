@@ -8,22 +8,23 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Vertical" Grid.Column="0">
+        <StackPanel Orientation="Vertical" Grid.Column="1">
             <Button Content="Добавить" Click="AddUser_Click"/>
             <Button Content="Удалить" Click="RemoveUser_Click"/>
-            <Button Content="Редактировать" Click="EditUser_Click"/>
+            <Button Content="Отметить как выполнено" Click="EditUser_Click"/>
         </StackPanel>
 
-        <ListView x:Name="userListView" ItemsSource="{Binding Users}" Grid.Column="1">
+        <ListView x:Name="userListView" ItemsSource="{Binding Users}" Grid.Column="0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Имя пользователя" DisplayMemberBinding="{Binding Name}" Width="150"/>
                     <GridViewColumn Header="Почта" DisplayMemberBinding="{Binding Email}" Width="150"/>
                     <GridViewColumn Header="Товар" DisplayMemberBinding="{Binding Product}" Width="150"/>
+                    <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding IsCompleted}" Width="150"/>
                 </GridView>
             </ListView.View>
         </ListView>
